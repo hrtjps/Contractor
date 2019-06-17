@@ -1,0 +1,19 @@
+<div class="row home-header">
+  <div class="col-md-8 mx-auto">
+    <div><h1>Dominus id CoknbItandi</h1></div>
+    <div class="summary">D Urna Volscens Mercede Modi Vel hac Circumcirca dis Nulla Aperiam</div>
+    <div><button type="button" mdbBtn color="danger" mdbWavesEffect>Quia Eu</button></div>
+  </div>
+</div>
+
+<div class="product-cards">
+  <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+    [animation]="'slide'">
+    <mdb-carousel-item *ngFor="let item of slides; let i = index">
+      <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}"
+        *ngFor="let card of item; let cardIndex = index">
+        <app-product-card [product]="card"></app-product-card>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>

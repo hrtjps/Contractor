@@ -1,0 +1,23 @@
+<div class="row filter-section">
+  <div class="col-md-8 mx-auto">
+    <div class="md-form search-form">
+      <span>Sorting Type: </span>
+      <select class="browser-default custom-select" [(ngModel)]="sortingType" >
+        <option value="Name Ascending" selected>Name Ascending</option>
+        <option value="Name Descending">Name Descending</option>
+        <option value="Rank Ascending" >Rank Ascending</option>
+        <option value="Rank Descending">Rank Descending</option>
+      </select>
+      <span>Search Text: </span>
+      <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row results-cards">
+    <div class="col-md-4" *ngFor="let card of results | filter: {searchText:searchText, sortingType: sortingType}; let cardIndex = index">
+      <app-product-card [product]="card"></app-product-card>
+    </div>
+  </div>
+</div>

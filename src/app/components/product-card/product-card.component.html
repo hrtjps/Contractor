@@ -1,0 +1,36 @@
+<mdb-card class="product-card">
+  <!-- <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img> -->
+  <mdb-card-body class="product-card-body">
+    <div class="seller-name">
+      <h4>{{product.SellerName}} ( {{product.SellerRank}} )</h4>
+    </div>
+    <div class="type-name">
+      <button type="button" mdbBtn color="link">{{product.TypeName}}</button>
+    </div>
+    <div class="start-time">{{product.StartTime}}</div>
+    <div class="metrics border border-primary">
+      <div class="metric">
+        <div class="metric-name">Metric1</div>
+        <div class="metric-value">{{product.Metric1}}</div>
+      </div>
+      <div class="metric border-left border-right border-primary">
+        <div class="metric-name">Metric2</div>
+        <div class="metric-value">{{product.Metric2}}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-name">Metric3</div>
+        <div class="metric-value">{{product.Metric3}}</div>
+      </div>
+    </div>
+    <div class="metric-graph">
+        <canvas mdbChart [chartType]="chartType" [datasets]="chartDatasets" [labels]="chartLabels" [colors]="chartColors"
+          [options]="chartOptions" [legend]="true">
+        </canvas>
+    </div>
+    <hr>
+    <div class="product-card-bottom">
+      <span>${{product.Price}}</span>
+      <button type="button" mdbBtn color="success" mdbWavesEffect>Buy</button>
+    </div>
+  </mdb-card-body>
+</mdb-card>
